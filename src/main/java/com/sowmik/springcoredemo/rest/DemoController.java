@@ -11,14 +11,15 @@ public class DemoController {
     private Coach myCoach;
 
     // constructor injection
-//    @Autowired
-//    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
-//        myCoach = theCoach;
-//    }
     @Autowired
-    public DemoController(Coach theCoach) {
+    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+        System.out.println("In constructor: "+ getClass().getSimpleName());
         myCoach = theCoach;
     }
+//    @Autowired
+//    public DemoController(Coach theCoach) {
+//        myCoach = theCoach;
+//    }
     // setter injection
 //    @Autowired
 //    public void setCoach(Coach theCoach) { // function name can be anything
