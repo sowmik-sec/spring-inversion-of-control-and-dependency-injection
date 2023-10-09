@@ -9,11 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     private Coach myCoach;
 
+    // constructor injection
+//    @Autowired
+//    public DemoController(Coach theCoach) {
+//        myCoach = theCoach;
+//    }
+    // setter injection
     @Autowired
-    public DemoController(Coach theCoach) {
+    public void setCoach(Coach theCoach) { // function name can be anything
         myCoach = theCoach;
     }
-
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
