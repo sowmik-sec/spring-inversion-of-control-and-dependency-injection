@@ -11,8 +11,12 @@ public class DemoController {
     private Coach myCoach;
 
     // constructor injection
+//    @Autowired
+//    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+//        myCoach = theCoach;
+//    }
     @Autowired
-    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+    public DemoController(Coach theCoach) {
         myCoach = theCoach;
     }
     // setter injection
